@@ -87,12 +87,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
 
             {/* Download Resume CTA */}
             <a
-              href="#contact"
+              href="https://drive.google.com/file/d/1DtV_Tjlhe9EaqHX5ZERFAhDEfIewLG8N/view?usp=sharing"
+              target="_blank"
               onClick={(e) => {
-                if (onOpenContact) {
-                  e.preventDefault();
-                  onOpenContact();
-                }
+                
               }}
               className="flex items-center gap-2 px-5 py-3 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-800 hover:border-zinc-700 font-medium text-xs sm:text-sm transition-all duration-200 active:scale-[0.98]"
             >

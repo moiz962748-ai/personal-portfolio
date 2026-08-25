@@ -12,7 +12,7 @@ export const portfolioData: PortfolioData = {
     linkedin: "https://linkedin.com/in/abdul-moiz-malik112",
     portfolioUrl: "https://abdulmoiz-webportfolio.netlify.app",
     stats: [
-      { label: "Years Experience", value: "2+" },
+      { label: "Years Experience", value: "1+" },
       { label: "Projects Completed", value: "10+" },
       { label: "Academic CGPA", value: "3.74" },
       { label: "Core Focus", value: "100% Modern Web" }

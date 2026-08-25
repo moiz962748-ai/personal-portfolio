@@ -1,6 +1,8 @@
+'use client';
+
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
-import { Mail, Phone, Send, Check, Copy, Sparkles, MapPin, Globe } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Mail, Phone, Send, Check, Copy, Sparkles, MapPin } from 'lucide-react';
 import { portfolioData } from '../data/portfolio';
 
 interface ContactSectionProps {
@@ -37,7 +39,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService }
   return (
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
       {/* Background container with subtle border */}
-      <div className="relative rounded-3xl bg-[#111113] border border-[#27272a] p-8 sm:p-12 overflow-hidden shadow-2xl">
+      <div className="relative rounded-3xl bg-[#111113] border border-[#27272a] p-6 sm:p-10 md:p-12 overflow-hidden shadow-2xl">
         {/* Subtle glow inside card */}
         <div className="absolute -top-24 -right-24 w-80 h-80 bg-sky-500/10 blur-[100px] rounded-full pointer-events-none" />
 
@@ -59,23 +61,24 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService }
 
             {/* Direct Contact Cards */}
             <div className="space-y-3">
-              {/* Email Copier */}
-              <div className="p-4 rounded-xl bg-[#161619] border border-[#27272a] flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-lg bg-[#1a1a1e] text-sky-400">
+              {/* Responsive Email Copier Card */}
+              <div className="p-3.5 sm:p-4 rounded-xl bg-[#161619] border border-[#27272a] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 overflow-hidden">
+                <div className="flex items-center gap-3 min-w-0">
+                  <div className="p-2.5 rounded-lg bg-[#1a1a1e] text-sky-400 shrink-0">
                     <Mail className="w-4 h-4" />
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <div className="text-[11px] font-mono text-zinc-400">Direct Email</div>
-                    <div className="text-xs sm:text-sm font-mono text-white font-medium">
+                    <div className="text-xs sm:text-sm font-mono text-white font-medium truncate select-all">
                       {personal.email}
                     </div>
                   </div>
                 </div>
 
                 <button
+                  type="button"
                   onClick={handleCopyEmail}
-                  className="px-3 py-1.5 rounded-lg bg-[#1f1f24] hover:bg-[#28282f] text-xs font-mono text-zinc-300 hover:text-white border border-[#2e2e36] transition-colors flex items-center gap-1.5"
+                  className="w-full sm:w-auto shrink-0 px-3 py-2 rounded-lg bg-[#1f1f24] hover:bg-[#28282f] text-xs font-mono text-zinc-300 hover:text-white border border-[#2e2e36] transition-all active:scale-95 flex items-center justify-center gap-1.5"
                 >
                   {copied ? (
                     <>
@@ -84,22 +87,22 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService }
                     </>
                   ) : (
                     <>
-                      <Copy className="w-3.5 h-3.5" />
+                      <Copy className="w-3.5 h-3.5 text-zinc-400" />
                       <span>Copy</span>
                     </>
                   )}
                 </button>
               </div>
 
-              {/* Phone / WhatsApp if present */}
+              {/* Phone / WhatsApp */}
               {personal.phone && (
-                <div className="p-4 rounded-xl bg-[#161619] border border-[#27272a] flex items-center gap-3">
-                  <div className="p-2.5 rounded-lg bg-[#1a1a1e] text-emerald-400">
+                <div className="p-3.5 sm:p-4 rounded-xl bg-[#161619] border border-[#27272a] flex items-center gap-3">
+                  <div className="p-2.5 rounded-lg bg-[#1a1a1e] text-emerald-400 shrink-0">
                     <Phone className="w-4 h-4" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <div className="text-[11px] font-mono text-zinc-400">Phone / WhatsApp</div>
-                    <div className="text-xs sm:text-sm font-mono text-white font-medium">
+                    <div className="text-xs sm:text-sm font-mono text-white font-medium truncate">
                       {personal.phone}
                     </div>
                   </div>
@@ -107,13 +110,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService }
               )}
 
               {/* Location info */}
-              <div className="p-4 rounded-xl bg-[#161619] border border-[#27272a] flex items-center gap-3 text-xs font-mono">
-                <div className="p-2.5 rounded-lg bg-[#1a1a1e] text-sky-400">
+              <div className="p-3.5 sm:p-4 rounded-xl bg-[#161619] border border-[#27272a] flex items-center gap-3 text-xs font-mono">
+                <div className="p-2.5 rounded-lg bg-[#1a1a1e] text-sky-400 shrink-0">
                   <MapPin className="w-4 h-4" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <div className="text-[11px] text-zinc-400">Location</div>
-                  <div className="text-zinc-200">{personal.location}</div>
+                  <div className="text-zinc-200 truncate">{personal.location}</div>
                 </div>
               </div>
             </div>
@@ -126,7 +129,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService }
           </div>
 
           {/* Right Column: Contact Form */}
-          <div className="lg:col-span-7 bg-[#141417] p-6 sm:p-8 rounded-2xl border border-[#27272a]">
+          <div className="lg:col-span-7 bg-[#141417] p-5 sm:p-8 rounded-2xl border border-[#27272a]">
             {submitted ? (
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -143,7 +146,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService }
                 <button
                   onClick={() => {
                     setSubmitted(false);
-                    setFormState({ name: '', email: '', interest: services[0]?.title || 'Frontend Development', message: '' });
+                    setFormState({ name: '', email: '', interest: services[0]?.title || 'Frontend & Web App Development', message: '' });
                   }}
                   className="mt-4 px-4 py-2 rounded-xl bg-[#1f1f23] text-xs font-mono text-zinc-300 hover:text-white border border-[#27272a]"
                 >
@@ -222,7 +225,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService }
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-white text-black font-semibold text-sm hover:bg-zinc-200 transition-colors shadow-lg disabled:opacity-50"
+                  className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-white text-black font-semibold text-sm hover:bg-zinc-200 transition-colors shadow-lg disabled:opacity-50 active:scale-[0.99]"
                 >
                   {loading ? (
                     <span className="font-mono text-xs">Sending message...</span>
