@@ -21,7 +21,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
   };
 
   return (
-    <section className="relative pt-12 sm:pt-20 pb-16 overflow-hidden">
+    <section className="relative pt-10 sm:pt-20 pb-14 overflow-hidden font-sans">
       {/* Background ambient lighting accents */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[350px] bg-sky-500/10 blur-[140px] rounded-full pointer-events-none -z-10" />
       <div className="absolute top-1/4 right-5 w-[300px] h-[300px] bg-indigo-500/5 blur-[120px] rounded-full pointer-events-none -z-10" />
@@ -56,12 +56,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
             </span>
           </motion.h1>
 
-          {/* 3. Subtitle */}
+          {/* 3. Subtitle (Reduced Size for Clean Reading) */}
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-6 text-base sm:text-lg text-zinc-400 max-w-2xl leading-relaxed font-normal"
+            className="mt-4 text-xs sm:text-sm md:text-base text-zinc-400 max-w-xl leading-relaxed font-normal px-2"
           >
             Specializing in <span className="text-zinc-200 font-semibold">Next.js</span>,{' '}
             <span className="text-zinc-200 font-semibold">React</span>, and modern full-stack architectures.
@@ -73,13 +73,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-10 flex flex-wrap items-center justify-center gap-3 sm:gap-4"
+            className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4"
           >
             {/* View Projects CTA */}
             <a
               href="#projects"
               onClick={handleScrollToProjects}
-              className="flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white text-black font-semibold text-sm hover:bg-zinc-200 transition-all duration-200 shadow-lg shadow-white/10 active:scale-[0.98]"
+              className="flex items-center gap-2 px-5 py-3 rounded-xl bg-white text-black font-semibold text-xs sm:text-sm hover:bg-zinc-200 transition-all duration-200 shadow-lg shadow-white/10 active:scale-[0.98]"
             >
               <span>View Projects</span>
               <ArrowDown className="w-4 h-4" />
@@ -94,7 +94,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
                   onOpenContact();
                 }
               }}
-              className="flex items-center gap-2 px-6 py-3.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-800 hover:border-zinc-700 font-medium text-sm transition-all duration-200 active:scale-[0.98]"
+              className="flex items-center gap-2 px-5 py-3 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-800 hover:border-zinc-700 font-medium text-xs sm:text-sm transition-all duration-200 active:scale-[0.98]"
             >
               <FileText className="w-4 h-4 text-sky-400" />
               <span>Download Resume</span>
@@ -107,7 +107,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
                 target="_blank"
                 rel="noreferrer"
                 title="GitHub Profile"
-                className="p-3.5 rounded-xl bg-zinc-900/80 hover:bg-zinc-800 border border-zinc-800 text-zinc-400 hover:text-white transition-colors"
+                className="p-3 rounded-xl bg-zinc-900/80 hover:bg-zinc-800 border border-zinc-800 text-zinc-400 hover:text-white transition-colors"
               >
                 <Github className="w-4 h-4" />
               </a>
@@ -116,7 +116,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
                 target="_blank"
                 rel="noreferrer"
                 title="LinkedIn Profile"
-                className="p-3.5 rounded-xl bg-zinc-900/80 hover:bg-zinc-800 border border-zinc-800 text-zinc-400 hover:text-white transition-colors"
+                className="p-3 rounded-xl bg-zinc-900/80 hover:bg-zinc-800 border border-zinc-800 text-zinc-400 hover:text-white transition-colors"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
@@ -128,17 +128,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-14 w-full grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-3xl"
+            className="mt-12 w-full grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4 max-w-2xl"
           >
             {personal.stats.map((stat, idx) => (
               <div
                 key={idx}
-                className="p-4 rounded-2xl bg-[#111113]/90 border border-zinc-800/80 hover:border-zinc-700 transition-colors text-center"
+                className="p-3 sm:p-4 rounded-xl bg-[#111113]/90 border border-zinc-800/80 hover:border-zinc-700 transition-colors text-center"
               >
-                <div className="text-2xl sm:text-3xl font-bold font-mono text-white tracking-tight">
+                <div className="text-xl sm:text-2xl font-bold font-mono text-white tracking-tight">
                   {stat.value}
                 </div>
-                <div className="text-xs font-medium text-zinc-400 mt-1">{stat.label}</div>
+                <div className="text-[11px] sm:text-xs font-medium text-zinc-400 mt-0.5">{stat.label}</div>
               </div>
             ))}
           </motion.div>
@@ -150,10 +150,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.5 }}
-        className="mt-20 relative w-full border-y border-zinc-800 bg-[#0d0d0f] py-4 overflow-hidden"
+        className="mt-16 relative w-full border-y border-zinc-800 bg-[#0d0d0f] py-3.5 overflow-hidden"
       >
-        <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-40 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-40 bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-40 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-40 bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
 
         <div className="animate-marquee-left flex items-center gap-6 whitespace-nowrap cursor-default select-none">
           {[...marqueeTech, ...marqueeTech, ...marqueeTech, ...marqueeTech].map((tech, index) => (
