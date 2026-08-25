@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'motion/react';
-import { ArrowDown, FileText, ArrowUpRight, Github, Linkedin, Sparkles } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowDown, FileText, Github, Linkedin } from 'lucide-react';
 import { portfolioData } from '../data/portfolio';
 
 interface HeroProps {
@@ -28,12 +28,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+          
           {/* 1. Location & Status Pill */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-zinc-900/90 border border-zinc-800 text-xs sm:text-sm font-medium text-zinc-300 shadow-inner mb-8"
+            className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-zinc-900/90 border border-zinc-800 text-xs sm:text-sm font-medium text-zinc-300 shadow-inner mb-6"
           >
             <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -42,25 +43,25 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
             <span>Rawalpindi / Islamabad • Open to Work</span>
           </motion.div>
 
-          {/* 2. Main Headline */}
+          {/* 2. Main Headline (Clean & Compact) */}
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.1]"
+            className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight max-w-3xl mx-auto"
           >
-            Front-end & Full-Stack Developer crafting{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-sky-200 to-indigo-300">
-              high-performance digital experiences.
+            Building scalable systems &{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500">
+              digital experiences.
             </span>
           </motion.h1>
 
-          {/* 3. Subtitle emphasizing Next.js, React, and scalable enterprise portals */}
+          {/* 3. Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-6 text-base sm:text-lg md:text-xl text-zinc-400 max-w-2xl leading-relaxed font-normal"
+            className="mt-6 text-base sm:text-lg text-zinc-400 max-w-2xl leading-relaxed font-normal"
           >
             Specializing in <span className="text-zinc-200 font-semibold">Next.js</span>,{' '}
             <span className="text-zinc-200 font-semibold">React</span>, and modern full-stack architectures.
@@ -144,18 +145,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
         </div>
       </div>
 
-      {/* 5. Seamless Infinite Auto-Scrolling Tech Marquee with ✦ separators */}
+      {/* 5. Seamless Infinite Auto-Scrolling Tech Marquee */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.5 }}
         className="mt-20 relative w-full border-y border-zinc-800 bg-[#0d0d0f] py-4 overflow-hidden"
       >
-        {/* Left & Right gradient fade masks */}
         <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-40 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-40 bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
 
-        {/* Marquee Track that pauses on hover */}
         <div className="animate-marquee-left flex items-center gap-6 whitespace-nowrap cursor-default select-none">
           {[...marqueeTech, ...marqueeTech, ...marqueeTech, ...marqueeTech].map((tech, index) => (
             <div key={index} className="flex items-center gap-6 shrink-0">
