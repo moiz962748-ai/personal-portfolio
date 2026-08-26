@@ -87,7 +87,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
 
             {/* Download Resume CTA */}
             <a
-              href="/assets/Abdul_Moiz_Software_Developer_Resume.pdf"
+              href="/Abdul_Moiz_Software_Developer_Resume.pdf"
               target="_blank"
               onClick={(e) => {
                 
