@@ -87,7 +87,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
 
             {/* Download Resume CTA */}
             <a
-              href="https://drive.google.com/file/d/1DtV_Tjlhe9EaqHX5ZERFAhDEfIewLG8N/view?usp=sharing"
+              href="/assets/Abdul_Moiz_Software_Developer_Resume.pdf"
               target="_blank"
               onClick={(e) => {
                 
@@ -95,7 +95,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
               className="flex items-center gap-2 px-5 py-3 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-800 hover:border-zinc-700 font-medium text-xs sm:text-sm transition-all duration-200 active:scale-[0.98]"
             >
               <FileText className="w-4 h-4 text-sky-400" />
-              <span>Download Resume</span>
+              <span>View Resume</span>
             </a>
 
             {/* Social Icons */}
