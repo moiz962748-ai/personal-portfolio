@@ -54,15 +54,15 @@ export const portfolioData: PortfolioData = {
       category: "Full-Stack Web App",
       description: "Opportunity finder connecting youth with jobs, scholarships, and internships across 20+ cities with dynamic CV Builder & PDF export.",
       tech: ["Next.js", "React", "Tailwind CSS", "Supabase"],
-      demoUrl: "#",
+      demoUrl: "https://kaamyab-pakistan.vercel.app/",
       featured: true
     },
     {
-      title: "JazzWorld Multi-Tenant CMS",
-      category: "Enterprise System",
-      description: "Engineered user-facing portals across Admin, Partner, and Customer views integrated with NestJS backend.",
-      tech: ["Next.js", "React", "Tailwind CSS", "Supabase"],
-      demoUrl: "#",
+      title: "Multi-Tenant E-Commerce Platform",
+      category: "Full-Stack Web App",
+      description: "Scalable multi-tenant CMS and storefront engine featuring dynamic subdomain theming, interactive variant management, RBAC, and real-time cart synchronization.",
+      tech: ["Next.js", "React", "Tailwind CSS", "Supabase", "PostgreSQL", "JWT Auth", "TypeScript"],
+      demoUrl: "https://storecraft-cms.vercel.app/",
       featured: true
     },
     {
@@ -70,7 +70,7 @@ export const portfolioData: PortfolioData = {
       category: "SaaS & Networking",
       description: "Role-based dashboards, meeting scheduling, document uploads, and MongoDB Atlas data pipelines.",
       tech: ["React.js", "MongoDB", "REST APIs", "Tailwind CSS"],
-      demoUrl: "#",
+      demoUrl: "https://nexus-iota-five.vercel.app/",
       featured: true
     },
     {
@@ -78,7 +78,7 @@ export const portfolioData: PortfolioData = {
       category: "Logistics & Dashboard",
       description: "Responsive React frontend with JWT authentication and full REST API backend integration.",
       tech: ["React.js", "MongoDB", "REST APIs", "Bootstrap"],
-      demoUrl: "#",
+      demoUrl: "https://truck-dispatch-system.vercel.app/",
       featured: false
     },
     {
@@ -90,13 +90,30 @@ export const portfolioData: PortfolioData = {
       featured: false
     },
     {
+      title: "Haramain Guide (Umrah & Ziyarat Companion)",
+      category: "Full-Stack Web App",
+      description: "Comprehensive digital companion featuring step-by-step authenticated Umrah rituals, historical Makkah & Madinah Ziyarat guides, and interactive itinerary planning.",
+      tech: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
+      demoUrl: "https://haramain-umrah-guide.vercel.app/",
+      featured: false
+    },
+    {
+      title: "Prize Bond System",
+      category: "Full-Stack Web App",
+      description: "Dynamic architecture with Next.js components, Supabase database integration, and an admin CMS.",
+      tech: ["React.js", "Supabase", "SQL", "Tailwind CSS"],
+      demoUrl: "https://prizebond-pk.netlify.app/",
+      featured: false
+    },
+    {
       title: "Task Management App",
       category: "Productivity",
       description: "Component-based architecture with React hooks, Supabase Auth, and SQL-based real-time CRUD operations.",
       tech: ["React.js", "Supabase", "SQL", "Tailwind CSS"],
-      demoUrl: "#",
+      demoUrl: "http://taskly-hub.vercel.app/",
       featured: false
     }
+    
   ],
   arsenal: {
     frontend: ["React.js", "Next.js", "JavaScript (ES6)", "HTML5 / CSS3", "Tailwind CSS", "Bootstrap", "jQuery", "Framer Motion"],
